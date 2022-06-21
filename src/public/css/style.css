@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+* {
+    font-family: Verdana, "メイリオ", Geneva, sans-serif;
+}
+
+.container {
+    width: 400px;
+    margin: 0 auto;
+}
+
+a,
+[name="delete_btn"] {
+    color: #13c;
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+
+h1 {
+    font-size: 24px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 16px;
+    margin-bottom: 34px;
+    display: flex;
+    align-items: center;
+}
+h1 a {
+    margin-left: auto;
+    font-size: 20px;
+}
+
+ul {
+    padding: 0;
+}
+
+li,
+li form {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+[name="is_done"] {
+    width: 20px;
+    height: 20px;
+}
+.title {
+    margin-left: 8px;
+}
+.created_at {
+    margin-left: auto;
+}
+[name="delete_btn"] {
+    font-size: 16px;
+    margin-left: 8px;
+}
