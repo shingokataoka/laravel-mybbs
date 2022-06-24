@@ -37,6 +37,11 @@ Route::get('/post/create', [PostController::class, 'create'])
 Route::post('/store', [PostController::class, 'store'])
     ->name('store');
 
+Route::patch('/posts/{post}/update', [PostController::class, 'update'])
+    ->where(['post', '[0-9]+'])
+    ->name('update');
+
+
 Route::delete('/post/{post}/destroy', [PostController::class, 'destroy'])
     ->name('destroy');
 
