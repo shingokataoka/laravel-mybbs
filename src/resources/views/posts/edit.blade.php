@@ -9,10 +9,10 @@
     </h1>
 
     <p class="back-link">
-        <a href="{{ route('show', $post) }}"> &laquo; Back</a>
+        <a href="{{ route('posts.show', $post) }}"> &laquo; Back</a>
     </p>
 
-    <form action="{{ route('update', $post) }}" method="post" class="post-form">
+    <form action="{{ route('posts.update', $post) }}" method="post" class="post-form">
         @method('PATCH')
         @csrf
 
@@ -31,7 +31,7 @@
             @enderror
         </label>
         <div>
-            <button name="post-form-btn">Update</button>
+            <button name="form-btn">Update</button>
         </div>
     </form>
 

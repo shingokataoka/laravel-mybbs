@@ -43,7 +43,7 @@ class PostController extends Controller
         $post->body = $request->body;
         $post->save();
         return redirect()
-            ->route('index');
+            ->route('posts.index');
     }
 
 
@@ -59,7 +59,7 @@ class PostController extends Controller
         $post->body = $request->body;
         $post->save();
         return redirect()
-            ->route('show', ['post' => $post]);
+            ->route('posts.show', ['post' => $post]);
     }
 
 
@@ -68,7 +68,7 @@ class PostController extends Controller
         $post->is_done = !$post->is_done;
         $post->save();
         return redirect()
-            ->route('index');
+            ->route('posts.index');
     }
 
 
@@ -76,7 +76,7 @@ class PostController extends Controller
     {
         $post->delete();
         return redirect()
-            ->route('index');
+            ->route('posts.index');
     }
 
 }
