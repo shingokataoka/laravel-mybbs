@@ -22,7 +22,7 @@ Route::get('/posts/{post}/show', [PostController::class, 'show'])
     ->where(['post', '[0-9]+'])
     ->name('show');
 
-    Route::get('/posts/{post}/edit', [PostController::class, 'edit'])
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])
     ->where(['post', '[0-9]+'])
     ->name('edit');
 
