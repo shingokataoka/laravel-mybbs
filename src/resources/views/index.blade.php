@@ -16,8 +16,8 @@
                 @csrf
                 @method('PATCH')
                 <input type="checkbox" name="is_done" {{ ($post->is_done)? 'checked' : '' }}>
+                <a class="title" href="{{ route('show', $post) }}">{{ $post->title }}</a>
             </form>
-            <a class="title" href="{{ route('show', $post) }}">{{ $post->title }}</a>
             <span class="created_at">{{ $post->created_at }}</span>
             <form action="{{ route('destroy', $post) }}" method="post" class="destroy-form">
                 @csrf
