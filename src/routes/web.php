@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,33 +17,43 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [PostController::class, 'index'])
-    ->name('index');
+    ->name('posts.index');
 
 Route::get('/posts/{post}/show', [PostController::class, 'show'])
     ->where(['post', '[0-9]+'])
-    ->name('show');
+    ->name('posts.show');
 
 Route::get('/posts/{post}/edit', [PostController::class, 'edit'])
     ->where(['post', '[0-9]+'])
-    ->name('edit');
+    ->name('posts.edit');
 
 Route::patch('/posts/{post}/toggle', [PostController::class, 'toggle'])
     ->where(['post', '[0-9]+'])
-    ->name('toggle');
+    ->name('posts.toggle');
 
 
-Route::get('/post/create', [PostController::class, 'create'])
-    ->name('create');
+Route::get('/posts/create', [PostController::class, 'create'])
+    ->name('posts.create');
 
-Route::post('/store', [PostController::class, 'store'])
-    ->name('store');
+Route::post('posts/store', [PostController::class, 'store'])
+    ->name('posts.store');
 
 Route::patch('/posts/{post}/update', [PostController::class, 'update'])
     ->where(['post', '[0-9]+'])
-    ->name('update');
+    ->name('posts.update');
 
 
-Route::delete('/post/{post}/destroy', [PostController::class, 'destroy'])
-    ->name('destroy');
+Route::delete('/posts/{post}/destroy', [PostController::class, 'destroy'])
+    ->where(['post', '[0-9]+'])
+    ->name('posts.destroy');
 
+
+
+Route::post('/posts/{post}/comment', [CommentController::class, 'store'])
+    ->where('post', '[0-9]+')
+    ->name('comments.store');
+
+Route::delete('/comments/{comment}/destroy', [CommentController::class, 'destroy'])
+    ->where('comment', '[0-9]+')
+    ->name('comments.destroy');
 

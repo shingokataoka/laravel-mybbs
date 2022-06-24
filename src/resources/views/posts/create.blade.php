@@ -9,10 +9,10 @@
     </h1>
 
     <p class="back-link">
-        <a href="{{ route('index') }}"> &laquo; Back</a>
+        <a href="{{ route('posts.index') }}"> &laquo; Back</a>
     </p>
 
-    <form action="{{ route('store') }}" method="post" class="post-form">
+    <form action="{{ route('posts.store') }}" method="post" class="post-form">
         @csrf
 
         <label>
