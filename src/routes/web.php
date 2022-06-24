@@ -18,22 +18,26 @@ use App\Http\Controllers\PostController;
 Route::get('/', [PostController::class, 'index'])
     ->name('index');
 
-Route::get('/posts/{post}/show', [PostController::class, 'test'])
+Route::get('/posts/{post}/show', [PostController::class, 'show'])
     ->where(['post', '[0-9]+'])
     ->name('show');
 
-Route::patch('/posts/{post}/toggle', [PostController::class, 'test'])
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])
+    ->where(['post', '[0-9]+'])
+    ->name('edit');
+
+Route::patch('/posts/{post}/toggle', [PostController::class, 'toggle'])
     ->where(['post', '[0-9]+'])
     ->name('toggle');
 
 
-Route::get('/post/create', [PostController::class, 'test'])
+Route::get('/post/create', [PostController::class, 'create'])
     ->name('create');
 
-Route::post('/store', [PostController::class, 'test'])
+Route::post('/store', [PostController::class, 'store'])
     ->name('store');
 
-Route::delete('/post/{post}/destroy', [PostController::class, 'test'])
+Route::delete('/post/{post}/destroy', [PostController::class, 'destroy'])
     ->name('destroy');
 
 
