@@ -46,4 +46,21 @@ class PostController extends Controller
             ->route('index');
     }
 
+
+    public function edit(Post $post)
+    {
+        return view('posts/edit', ['post' => $post]);
+    }
+
+
+    public function update(Post $post, PostRequest $request)
+    {
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
+        return redirect()
+            ->route('show', ['post' => $post]);
+    }
+
+
 }

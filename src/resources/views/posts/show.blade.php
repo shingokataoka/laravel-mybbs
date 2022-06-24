@@ -5,7 +5,7 @@
     </x-slot>
 
     <h1>
-        <span>Add - My BBS</span>
+        <span>{{ $post->title }} - My BBS</span>
         <a href="{{ route('edit', $post) }}">Edit</a>
     </h1>
 
