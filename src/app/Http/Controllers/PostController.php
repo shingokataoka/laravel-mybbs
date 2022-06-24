@@ -62,11 +62,19 @@ class PostController extends Controller
             ->route('show', ['post' => $post]);
     }
 
-    
+
     public function toggle(Post $post)
     {
         $post->is_done = !$post->is_done;
         $post->save();
+        return redirect()
+            ->route('index');
+    }
+
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
         return redirect()
             ->route('index');
     }
